@@ -93,6 +93,10 @@ export function buildUrl(url: string, options: BuildUrlOptions) {
       .join(":")}`;
   }
 
+  if (!url.startsWith("/")) {
+    path += "/";
+  }
+
   path += url;
 
   if (path.startsWith("/")) {
