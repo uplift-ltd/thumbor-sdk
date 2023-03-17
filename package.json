@@ -15,6 +15,7 @@
     "build:esm": "tsc --outDir esm",
     "prettier:check": "prettier --check \"src/**/*.ts\"",
     "prettier:write": "prettier --write \"src/**/*.ts\"",
+    "prepublishOnly": "npm run build",
     "jest:check": "jest",
     "test": "npm run jest:check && npm run prettier:check"
   },
