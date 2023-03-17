@@ -1,0 +1,42 @@
+{
+  "name": "thumbor-sdk",
+  "version": "1.0.0",
+  "description": "",
+  "main": "cjs/index.js",
+  "module": "esm/index.js",
+  "files": [
+    "cjs/",
+    "esm/",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "npm run build:esm && npm run build:cjs",
+    "build:cjs": "tsc --module commonjs --outDir cjs",
+    "build:esm": "tsc --outDir esm",
+    "prettier:check": "prettier --check \"src/**/*.ts\"",
+    "prettier:write": "prettier --write \"src/**/*.ts\"",
+    "jest:check": "jest",
+    "test": "npm run jest:check && npm run prettier:check"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/uplift-ltd/thumbor-sdk.git"
+  },
+  "keywords": [
+    "thumbor"
+  ],
+  "author": "Marius Craciunoiu <marius@uplift.ltd>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/uplift-ltd/thumbor-sdk/issues"
+  },
+  "homepage": "https://github.com/uplift-ltd/thumbor-sdk#readme",
+  "devDependencies": {
+    "@types/jest": "^29.5.0",
+    "@types/node": "^18.15.3",
+    "jest": "^29.5.0",
+    "prettier": "^2.8.4",
+    "ts-jest": "^29.0.5",
+    "typescript": "^5.0.2"
+  }
+}
