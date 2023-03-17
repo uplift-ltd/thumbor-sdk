@@ -16,6 +16,8 @@ yarn add thumbor-sdk
 
 ### Thumbor
 
+**Note:** This class requires a security key to be provided, if you need to get the url on the frontend use [UnsafeThumbor](#unsafethumbor) instead.
+
 #### url
 
 ```ts
@@ -52,6 +54,26 @@ const hash = thumbor.sign("/some/my-img.png", {
 
 console.log(hash);
 // => Huoc3kthH95DAsvoedAjQB3kleg
+```
+
+### UnsafeThumbor
+
+#### url
+
+```ts
+import { UnsafeThumbor } from "thumbor-sdk";
+
+const thumbor = new UnsafeThumbor({
+  endpoint: "http://localhost:8888",
+});
+
+const url = thumbor.url("/some/my-img.png", {
+  width: 1920,
+  height: 1080,
+});
+
+console.log(url);
+// => http://localhost:8888/unsafe/1920x1080/some/my-img.png
 ```
 
 ## Sponsors

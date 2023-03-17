@@ -1,4 +1,4 @@
-import { Thumbor } from "../src/thubmor";
+import { Thumbor, UnsafeThumbor } from "../src/thubmor";
 
 describe("thumbor", () => {
   describe("url", () => {
@@ -18,6 +18,7 @@ describe("thumbor", () => {
       );
     });
   });
+
   describe("sign", () => {
     it("should sign a url", () => {
       const thumbor = new Thumbor({
@@ -31,6 +32,37 @@ describe("thumbor", () => {
       });
 
       expect(url).toEqual("Huoc3kthH95DAsvoedAjQB3kleg=");
+    });
+  });
+
+  describe("no key", () => {
+    expect(
+      () =>
+        // @ts-expect-error
+        new Thumbor({
+          endpoint: "http://localhost:8888",
+        })
+    ).toThrowError(
+      "A key was not provided to Thumbor. Please use UnsafeThumbor on the frontend."
+    );
+  });
+});
+
+describe("unsafe thumbor", () => {
+  describe("url", () => {
+    it("should format a full url", () => {
+      const thumbor = new UnsafeThumbor({
+        endpoint: "http://localhost:8888",
+      });
+
+      const url = thumbor.url("/some/my-img.png", {
+        width: 1920,
+        height: 1080,
+      });
+
+      expect(url).toEqual(
+        "http://localhost:8888/unsafe/1920x1080/some/my-img.png"
+      );
     });
   });
 });
