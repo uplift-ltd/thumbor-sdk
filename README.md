@@ -9,7 +9,7 @@ npm i --save thumbor-sdk
 ```
 
 ```
-yarn add thumbor-sd
+yarn add thumbor-sdk
 ```
 
 ## Usage
