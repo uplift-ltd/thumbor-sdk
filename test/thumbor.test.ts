@@ -14,7 +14,7 @@ describe("thumbor", () => {
       });
 
       expect(url).toEqual(
-        "http://localhost:8888/Huoc3kthH95DAsvoedAjQB3kleg/1920x1080/some/my-img.png"
+        "http://localhost:8888/Huoc3kthH95DAsvoedAjQB3kleg=/1920x1080/some/my-img.png"
       );
     });
   });
@@ -30,7 +30,7 @@ describe("thumbor", () => {
         height: 1080,
       });
 
-      expect(url).toEqual("Huoc3kthH95DAsvoedAjQB3kleg");
+      expect(url).toEqual("Huoc3kthH95DAsvoedAjQB3kleg=");
     });
   });
 });
