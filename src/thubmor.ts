@@ -17,13 +17,15 @@ export class Thumbor {
     this.key = options.key;
   }
 
-  sign(str: string) {
-    return sign(str, this.key);
+  sign(path: string, options: BuildUrlOptions) {
+    const url = buildUrl(path, options);
+    const hash = sign(url, this.key);
+    return hash;
   }
 
   url(path: string, options: BuildUrlOptions) {
     const url = buildUrl(path, options);
-    const hash = this.sign(url);
+    const hash = sign(url, this.key);
     return `${this.endpoint}/${hash}/${url}`;
   }
 }

@@ -6,7 +6,7 @@ describe("url", () => {
       metadata: true,
     });
 
-    expect(url).toEqual("/meta/some/my-img.png");
+    expect(url).toEqual("meta/some/my-img.png");
   });
 
   it("should match width", () => {
@@ -14,7 +14,7 @@ describe("url", () => {
       width: 300,
     });
 
-    expect(url).toEqual("/300x0/some/my-img.png");
+    expect(url).toEqual("300x0/some/my-img.png");
   });
 
   it("should match height", () => {
@@ -22,7 +22,7 @@ describe("url", () => {
       height: 300,
     });
 
-    expect(url).toEqual("/0x300/some/my-img.png");
+    expect(url).toEqual("0x300/some/my-img.png");
   });
 
   it("should match trim", () => {
@@ -30,7 +30,7 @@ describe("url", () => {
       trim: true,
     });
 
-    expect(url).toEqual("/trim/some/my-img.png");
+    expect(url).toEqual("trim/some/my-img.png");
   });
 
   describe("crop", () => {
@@ -39,7 +39,7 @@ describe("url", () => {
         crop: "1x2:3x4",
       });
 
-      expect(url).toEqual("/1x2:3x4/some/my-img.png");
+      expect(url).toEqual("1x2:3x4/some/my-img.png");
     });
 
     it("should match crop number array", () => {
@@ -50,7 +50,7 @@ describe("url", () => {
         ],
       });
 
-      expect(url).toEqual("/1x2:3x4/some/my-img.png");
+      expect(url).toEqual("1x2:3x4/some/my-img.png");
     });
 
     it("should match crop string array", () => {
@@ -58,7 +58,7 @@ describe("url", () => {
         crop: ["1x2", "3x4"],
       });
 
-      expect(url).toEqual("/1x2:3x4/some/my-img.png");
+      expect(url).toEqual("1x2:3x4/some/my-img.png");
     });
   });
 
@@ -68,7 +68,7 @@ describe("url", () => {
         fitIn: true,
       });
 
-      expect(url).toEqual("/fit-in/some/my-img.png");
+      expect(url).toEqual("fit-in/some/my-img.png");
     });
 
     it("should match adaptive fit in", () => {
@@ -76,7 +76,7 @@ describe("url", () => {
         fitIn: "adaptive",
       });
 
-      expect(url).toEqual("/adaptive-fit-in/some/my-img.png");
+      expect(url).toEqual("adaptive-fit-in/some/my-img.png");
     });
 
     it("should match full fit in", () => {
@@ -84,7 +84,7 @@ describe("url", () => {
         fitIn: "full",
       });
 
-      expect(url).toEqual("/full-fit-in/some/my-img.png");
+      expect(url).toEqual("full-fit-in/some/my-img.png");
     });
   });
 
@@ -95,7 +95,7 @@ describe("url", () => {
       height: 200,
     });
 
-    expect(url).toEqual("/-300x200/some/my-img.png");
+    expect(url).toEqual("-300x200/some/my-img.png");
   });
 
   describe("horizontalAlign", () => {
@@ -104,7 +104,7 @@ describe("url", () => {
         horizontalAlign: "left",
       });
 
-      expect(url).toEqual("/left/some/my-img.png");
+      expect(url).toEqual("left/some/my-img.png");
     });
 
     it("should match center horizontalAlign", () => {
@@ -112,7 +112,7 @@ describe("url", () => {
         horizontalAlign: "center",
       });
 
-      expect(url).toEqual("/center/some/my-img.png");
+      expect(url).toEqual("center/some/my-img.png");
     });
 
     it("should match right horizontalAlign", () => {
@@ -120,7 +120,7 @@ describe("url", () => {
         horizontalAlign: "right",
       });
 
-      expect(url).toEqual("/right/some/my-img.png");
+      expect(url).toEqual("right/some/my-img.png");
     });
   });
 
@@ -130,7 +130,7 @@ describe("url", () => {
         verticalAlign: "left",
       });
 
-      expect(url).toEqual("/left/some/my-img.png");
+      expect(url).toEqual("left/some/my-img.png");
     });
 
     it("should match center verticalAlign", () => {
@@ -138,7 +138,7 @@ describe("url", () => {
         verticalAlign: "center",
       });
 
-      expect(url).toEqual("/center/some/my-img.png");
+      expect(url).toEqual("center/some/my-img.png");
     });
 
     it("should match right verticalAlign", () => {
@@ -146,7 +146,7 @@ describe("url", () => {
         verticalAlign: "right",
       });
 
-      expect(url).toEqual("/right/some/my-img.png");
+      expect(url).toEqual("right/some/my-img.png");
     });
   });
 
@@ -155,7 +155,7 @@ describe("url", () => {
       smartCrop: true,
     });
 
-    expect(url).toEqual("/smart/some/my-img.png");
+    expect(url).toEqual("smart/some/my-img.png");
   });
 
   describe("filters", () => {
@@ -166,7 +166,7 @@ describe("url", () => {
         },
       });
 
-      expect(url).toEqual("/filters:quality(70%)/some/my-img.png");
+      expect(url).toEqual("filters:quality(70%)/some/my-img.png");
     });
 
     it("should match a filter with a single number argument", () => {
@@ -176,7 +176,7 @@ describe("url", () => {
         },
       });
 
-      expect(url).toEqual("/filters:quality(1)/some/my-img.png");
+      expect(url).toEqual("filters:quality(1)/some/my-img.png");
     });
 
     it("should match a filter with a single boolean argument", () => {
@@ -186,7 +186,7 @@ describe("url", () => {
         },
       });
 
-      expect(url).toEqual("/filters:quality(true)/some/my-img.png");
+      expect(url).toEqual("filters:quality(true)/some/my-img.png");
     });
 
     it("should match a filter with multiple arguments", () => {
@@ -196,7 +196,7 @@ describe("url", () => {
         },
       });
 
-      expect(url).toEqual("/filters:quality(70%,0,false)/some/my-img.png");
+      expect(url).toEqual("filters:quality(70%,0,false)/some/my-img.png");
     });
 
     it("should match multiple filters with multiple arguments", () => {
@@ -208,7 +208,7 @@ describe("url", () => {
       });
 
       expect(url).toEqual(
-        "/filters:quality(70%,0,false):yolo(50%,1,true)/some/my-img.png"
+        "filters:quality(70%,0,false):yolo(50%,1,true)/some/my-img.png"
       );
     });
   });
@@ -231,7 +231,7 @@ describe("url", () => {
     });
 
     expect(url).toEqual(
-      "/meta/trim/1x2:3x4/fit-in/-1920x1080/center/center/smart/filters:quality(75%)/some/my-img.png"
+      "meta/trim/1x2:3x4/fit-in/-1920x1080/center/center/smart/filters:quality(75%)/some/my-img.png"
     );
   });
 });

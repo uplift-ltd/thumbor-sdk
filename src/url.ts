@@ -93,5 +93,11 @@ export function buildUrl(url: string, options: BuildUrlOptions) {
       .join(":")}`;
   }
 
-  return path + url;
+  path += url;
+
+  if (path.startsWith("/")) {
+    return path.substring(1);
+  }
+
+  return path;
 }
