@@ -1,4 +1,4 @@
-import { Thumbor, UnsafeThumbor } from "../src/thubmor";
+import { Thumbor, UnsafeThumbor } from "../src/thumbor";
 
 describe("thumbor", () => {
   describe("url", () => {

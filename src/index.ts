@@ -1,10 +1,10 @@
-export { Thumbor } from "./thubmor";
+export { Thumbor } from "./thumbor";
 
-export type { ThumborOptions } from "./thubmor";
+export type { ThumborOptions } from "./thumbor";
 
-export { UnsafeThumbor } from "./thubmor";
+export { UnsafeThumbor } from "./thumbor";
 
-export type { UnsafeThumborOptions } from "./thubmor";
+export type { UnsafeThumborOptions } from "./thumbor";
 
 export { buildUrl } from "./url";
 
